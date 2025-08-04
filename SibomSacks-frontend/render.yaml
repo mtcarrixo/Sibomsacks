@@ -1,0 +1,8 @@
+services:
+  - type: static
+    name: sibomsacks-frontend
+    env: node
+    buildCommand: npm run build
+    staticPublishPath: dist
+    branch: main
+    repo: https://github.com/mtcarrixo/Sibomsacks

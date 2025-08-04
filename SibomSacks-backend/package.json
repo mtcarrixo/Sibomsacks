@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "postinstall": "npm rebuild sqlite3 --build-from-source"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -20,7 +21,7 @@
   "devDependencies": {
     "nodemon": "^3.0.3"
   },
-  "keywords": [],
-  "author": "TuNombre",
+  "keywords": ["express", "sequelize", "sqlite", "contacto", "api"],
+  "author": "Martin Carrizo",
   "license": "MIT"
 }

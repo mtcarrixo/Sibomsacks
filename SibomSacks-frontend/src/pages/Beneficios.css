@@ -1,0 +1,44 @@
+.beneficios-bg {
+  background-color: #f8f9fa;
+}
+
+.ventaja-box {
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  transition: box-shadow 0.3s ease;
+}
+
+.ventaja-box:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contacto-box {
+  background-color: #004aad;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn-contacto {
+  background-color: #ffd500;
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-contacto:hover {
+  background-color: #e6be00;
+}
+
+/* Alinear altura entre columnas en desktop */
+@media (min-width: 992px) {
+  .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+  }
+}

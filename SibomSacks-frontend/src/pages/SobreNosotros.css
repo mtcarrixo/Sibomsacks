@@ -1,0 +1,17 @@
+.hero-section {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 300px;
+}
+
+.feature-card {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.feature-card:hover {
+  background-color: #e9f1ff;
+  transform: translateY(-4px);
+  border-left: 4px solid #004aad;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}

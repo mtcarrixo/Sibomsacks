@@ -1,0 +1,31 @@
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  object-fit: contain;
+  height: 180px;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-producto {
+  background-color: #FFD500; /* Amarillo institucional */
+  color: black;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-producto:hover {
+  background-color: #e6be00;
+  color: black;
+}

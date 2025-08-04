@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instancia = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: import.meta.env.VITE_API_URL, // Esto lee la variable definida en Render
   headers: {
     "Content-Type": "application/json"
   }

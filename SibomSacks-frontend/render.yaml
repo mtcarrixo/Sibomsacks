@@ -6,3 +6,7 @@ services:
     staticPublishPath: dist
     branch: main
     repo: https://github.com/mtcarrixo/Sibomsacks
+    routes:
+      - type: rewrite
+        source: /.*     # Todas las rutas
+        destination: /index.html

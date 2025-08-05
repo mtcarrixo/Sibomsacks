@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://sibomsacks-1.onrender.com"
+  "https://sibomsacks-gvfz.onrender.com"
 ];
 
 app.use(cors({

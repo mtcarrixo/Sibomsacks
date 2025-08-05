@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import logger from "morgan";
+import path from "path";
+import { fileURLToPath } from "url";
 import { dbProductos } from "./models/index.js";
 
 // Importar rutas
@@ -11,6 +13,10 @@ import contactoRoutes from "./routes/contacto.routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// __dirname para ESModules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // #region Middlewares
 
@@ -36,39 +42,19 @@ app
   .use(express.urlencoded({ extended: true }))
   .use(logger("dev"));
 
-// #endregion
+// Servir archivos estáticos del frontend
+app.use(express.static(path.join(__dirname, "dist")));
 
-// Página de inicio básica
-app.get("/", (req, res) => {
-  res.send(`
-    <html>
-      <head>
-        <title>Servidor Express</title>
-        <style>
-          body { background-color: #f2f2f2; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
-          .container { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.1); text-align: center; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <h1>API SIBOMSACKS</h1>
-          <p>Servidor corriendo en <strong>http://localhost:${PORT}</strong></p>
-        </div>
-      </body>
-    </html>
-  `);
-});
-
-// #region Routers
+// #region Routers API
 app
   .use("/provincias", provinciasRoutes)
   .use("/sectores", sectoresRoutes)
   .use("/contacto", contactoRoutes)
   .use("/productos", productoRoutes);
 
-// Ruta no encontrada
-app.use((req, res) => {
-  res.status(404).json({ error: "Ruta no encontrada" });
+// Catch-all para rutas de React (SPA)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 // #region Iniciar servidor

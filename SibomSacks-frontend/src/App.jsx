@@ -13,7 +13,7 @@ import Contacto from "./pages/Contacto";
 import ProductoDetalle from "./pages/DetalleProductos";
 
 import "./App.css";
-import whatsappIcon from "./assets/images/whatsapp.png"; 
+import whatsappIcon from "../public/images/whatsapp.png";
 
 function App() {
   return (

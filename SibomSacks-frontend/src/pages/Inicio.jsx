@@ -27,21 +27,21 @@ function Inicio() {
                 <div className="carousel-inner rounded shadow">
                   <div className="carousel-item active">
                     <img
-                      src="./src/assets/images/slide1.png"
+                      src="../../public/images/slide1.png"
                       className="d-block w-100 carousel-img"
                       alt="Imagen 1"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      src="./src/assets/images/slide2.PNG"
+                      src="../../public/images/slide2.png"
                       className="d-block w-100 carousel-img"
                       alt="Imagen 2"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      src="./src/assets/images/slide3.png"
+                      src="../../public/images/slide3.png"
                       className="d-block w-100 carousel-img"
                       alt="Imagen 3"
                     />

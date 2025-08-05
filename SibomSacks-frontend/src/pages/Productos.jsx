@@ -36,7 +36,9 @@ const Productos = () => {
         {productos.map((producto) => {
           const modelo = producto.caracteristicasGenerales?.id_tipo;
           const nombreImagen = imagenesPorModelo[modelo] || "default.png";
-          const imagenSrc = new URL(`../assets/images/${nombreImagen}`, import.meta.url).href;
+          const imagenSrc = `../../public/images/${nombreImagen}`;
+
+
 
           return (
             <div className="col-md-4 col-sm-6" key={producto.id}>

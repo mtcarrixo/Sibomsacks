@@ -140,10 +140,8 @@
 
     const modelo = producto.caracteristicasGenerales?.id_tipo;
     const nombreImagen = imagenesPorModelo[modelo] || "default.png";
-    const imagenSrc = new URL(
-      `../assets/images/${nombreImagen}`,
-      import.meta.url
-    ).href;
+    const imagenSrc = `../../public/images/${nombreImagen}`;
+
 
     const infoAdicional = informacionAdicionalPorModelo[modelo];
 

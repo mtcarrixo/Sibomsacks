@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Encabezado.css";
-import logo from "../assets/images/icono.png";
+import logo from "../../public/images/icono.png"; 
 
 function Encabezado() {
   const [menuAbierto, setMenuAbierto] = useState(false);

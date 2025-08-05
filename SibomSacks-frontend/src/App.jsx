@@ -13,7 +13,6 @@ import Contacto from "./pages/Contacto";
 import ProductoDetalle from "./pages/DetalleProductos";
 
 import "./App.css";
-import whatsappIcon from "../public/images/whatsapp.png";
 
 function App() {
   return (
@@ -41,12 +40,12 @@ function App() {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/5493516622764" // Reemplaza con tu número de WhatsApp
+      href="https://wa.me/5493516622764"
       className="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={whatsappIcon} alt="WhatsApp" />
+      <img src="/images/whatsapp.png" alt="WhatsApp" />
     </a>
   );
 }

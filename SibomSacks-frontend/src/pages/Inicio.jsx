@@ -27,21 +27,21 @@ function Inicio() {
                 <div className="carousel-inner rounded shadow">
                   <div className="carousel-item active">
                     <img
-                      src="../../public/images/slide1.png"
+                      src="/images/slide1.png"
                       className="d-block w-100 carousel-img"
                       alt="Imagen 1"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      src="../../public/images/slide2.png"
+                      src="/images/slide2.png"
                       className="d-block w-100 carousel-img"
                       alt="Imagen 2"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      src="../../public/images/slide3.png"
+                      src="/images/slide3.png"
                       className="d-block w-100 carousel-img"
                       alt="Imagen 3"
                     />
@@ -80,7 +80,7 @@ function Inicio() {
         </h4>
         <div className="imagenes-contenedor d-flex justify-content-center flex-wrap gap-4 mt-4">
           <div className="imagen-item shadow">
-            <img src="./src/assets/images/agricultura.jpg" alt="Agricultura" />
+            <img src="/images/agricultura.jpg" alt="Agricultura" />
             <div className="info">
               <h5>Agricultura</h5>
               <p>
@@ -90,14 +90,14 @@ function Inicio() {
             </div>
           </div>
           <div className="imagen-item shadow">
-            <img src="./src/assets/images/industry.jpg" alt="Industria" />
+            <img src="/images/industry.jpg" alt="Industria" />
             <div className="info">
               <h5>Industria</h5>
               <p>Big Bags duraderos y versátiles para materiales a granel.</p>
             </div>
           </div>
           <div className="imagen-item shadow">
-            <img src="./src/assets/images/mineria.jpg" alt="Minería" />
+            <img src="/images/mineria.jpg" alt="Minería" />
             <div className="info">
               <h5>Minería</h5>
               <p>Seguros y resistentes, ideales para grandes cargas mineras.</p>
@@ -111,31 +111,28 @@ function Inicio() {
         <h4 className="text-center mb-4">Empresas que confían en nosotros</h4>
         <div className="Empresas-Content d-flex flex-wrap justify-content-center gap-4 align-items-center">
           <div className="empresa-item normal">
-            <img src="./src/assets/images/egran.png" alt="Egran" />
+            <img src="/images/egran.png" alt="Egran" />
           </div>
           <div className="empresa-item semi-destacada">
-            <img src="./src/assets/images/caima.png" alt="Caima" />
+            <img src="/images/caima.png" alt="Caima" />
           </div>
           <div className="empresa-item semi-destacada">
-            <img src="./src/assets/images/plasticosbv.png" alt="Plásticos BV" />
-          </div>
-
-          {/* Logos más importantes al centro */}
-          <div className="empresa-item destacada">
-            <img src="./src/assets/images/pirquitas.jpeg" alt="Pirquitas" />
+            <img src="/images/plasticosbv.png" alt="Plásticos BV" />
           </div>
           <div className="empresa-item destacada">
-            <img src="./src/assets/images/biofarma.jpg" alt="Biofarma" />
+            <img src="/images/pirquitas.jpeg" alt="Pirquitas" />
           </div>
-
-          <div className="empresa-item semi-destacada">
-            <img src="./src/assets/images/donadelmo.png" alt="Don Adelmo" />
+          <div className="empresa-item destacada">
+            <img src="/images/biofarma.jpg" alt="Biofarma" />
           </div>
           <div className="empresa-item semi-destacada">
-            <img src="./src/assets/images/tapi.png" alt="Tapi" />
+            <img src="/images/donadelmo.png" alt="Don Adelmo" />
+          </div>
+          <div className="empresa-item semi-destacada">
+            <img src="/images/tapi.png" alt="Tapi" />
           </div>
           <div className="empresa-item normal">
-            <img src="./src/assets/images/cerrito.png" alt="Cerrito" />
+            <img src="/images/cerrito.png" alt="Cerrito" />
           </div>
         </div>
       </section>

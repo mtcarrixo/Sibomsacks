@@ -1,29 +1,35 @@
 import express from "express";
 import cors from "cors";
-import logger from "morgan"; // Si estás usando morgan como logger
-import { dbProductos } from "./models/index.js"; // Cambiado para usar dbProductos desde models/index.js
+import logger from "morgan";
+import { dbProductos } from "./models/index.js";
 
 // Importar rutas
 import productoRoutes from "./routes/producto.routes.js";
 import provinciasRoutes from "./routes/provincias.routes.js";
 import sectoresRoutes from "./routes/sectores.routes.js";
-import contactoRoutes from "./routes/contacto.routes.js"; // Importar la ruta de contacto
+import contactoRoutes from "./routes/contacto.routes.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // #region Middlewares
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://sibomsacks-1.onrender.com"
+];
+
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
 app
   .use(express.json())
-  .use(express.urlencoded({ extended: true }));
+  .use(express.urlencoded({ extended: true }))
+  .use(logger("dev"));
 
-app.use(logger("dev")); // O solo `app.use(logger)` si ya es una función definida por vos
 // #endregion
 
 // Página de inicio básica
@@ -62,7 +68,7 @@ app.use((req, res) => {
 // #region Iniciar servidor
 (async function start() {
   try {
-    await dbProductos.authenticate(); // Cambiado para usar dbProductos
+    await dbProductos.authenticate();
     console.log("✅ Conexión a la base de datos establecida.");
   } catch (error) {
     console.error("❌ Error al conectar a la base de datos:\n", error);
@@ -72,5 +78,4 @@ app.use((req, res) => {
   app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
   });
-}());
-// #endregion
+})();

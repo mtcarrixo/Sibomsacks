@@ -23,8 +23,8 @@ function Contacto() {
     const fetchDatos = async () => {
       try {
         const [resProvincias, resSectores] = await Promise.all([
-          axios.get("http://localhost:3000/provincias"),
-          axios.get("http://localhost:3000/sectores"),
+          axios.get("https://sibomsacks.onrender.com/provincias"),
+          axios.get("https://sibomsacks.onrender.com/sectores"),
         ]);
         setProvincias(resProvincias.data);
         setSectores(resSectores.data);
@@ -36,9 +36,13 @@ function Contacto() {
   }, []);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    const valorFinal =
+      name === "id_provincia" || name === "id_sector" ? Number(value) : value;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: valorFinal,
     });
   };
 
@@ -49,7 +53,7 @@ function Contacto() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/contacto",
+        "https://sibomsacks.onrender.com/contacto",
         formData
       );
       setMensajeEstado({
@@ -94,7 +98,6 @@ function Contacto() {
       </div>
 
       <form onSubmit={handleSubmit}>
-        {/* Empresa */}
         <div className="mb-3">
           <label className="form-label">Empresa</label>
           <input
@@ -106,7 +109,6 @@ function Contacto() {
           />
         </div>
 
-        {/* Nombre y Apellido */}
         <div className="row">
           <div className="col-md-6 mb-3">
             <label className="form-label">Nombre</label>
@@ -132,7 +134,6 @@ function Contacto() {
           </div>
         </div>
 
-        {/* Correo y Teléfono */}
         <div className="row">
           <div className="col-md-6 mb-3">
             <label className="form-label">Correo electrónico</label>
@@ -158,7 +159,6 @@ function Contacto() {
           </div>
         </div>
 
-        {/* Provincia y Sector */}
         <div className="row">
           <div className="col-md-6 mb-3">
             <label className="form-label">Provincia</label>
@@ -196,7 +196,6 @@ function Contacto() {
           </div>
         </div>
 
-        {/* Mensaje */}
         <div className="mb-3">
           <label className="form-label">Mensaje</label>
           <textarea
@@ -209,7 +208,6 @@ function Contacto() {
           ></textarea>
         </div>
 
-        {/* Estado del mensaje */}
         {mensajeEstado && (
           <div
             className={`alert alert-${
@@ -220,7 +218,6 @@ function Contacto() {
           </div>
         )}
 
-        {/* Botón */}
         <button type="submit" className="btn btn-primary" disabled={enviando}>
           {enviando ? "Enviando..." : "Enviar"}
         </button>

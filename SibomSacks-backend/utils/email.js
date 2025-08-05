@@ -21,11 +21,22 @@ export async function enviarCorreoContacto({
   id_provincia,
   mensaje
 }) {
-  const provincia = await Provincia.findByPk(id_provincia);
-  const sector = await Sector.findByPk(id_sector);
+  let provinciaNombre = `ID ${id_provincia}`;
+  let sectorNombre = `ID ${id_sector}`;
 
-  const provinciaNombre = provincia?.nombre || `ID ${id_provincia}`;
-  const sectorNombre = sector?.nombre || `ID ${id_sector}`;
+  try {
+    const provincia = await Provincia.findByPk(Number(id_provincia));
+    if (provincia) provinciaNombre = provincia.nombre;
+  } catch (e) {
+    console.warn("No se pudo obtener la provincia:", e.message);
+  }
+
+  try {
+    const sector = await Sector.findByPk(Number(id_sector));
+    if (sector) sectorNombre = sector.nombre;
+  } catch (e) {
+    console.warn("No se pudo obtener el sector:", e.message);
+  }
 
   const html = `
     <h2>Nuevo mensaje de contacto</h2>

@@ -16,12 +16,18 @@
     "nodemailer": "^6.9.8",
     "sequelize": "^6.35.1",
     "sql-formatter": "^15.6.6",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
   },
-  "keywords": ["express", "sequelize", "sqlite", "contacto", "api"],
+  "keywords": [
+    "express",
+    "sequelize",
+    "sqlite",
+    "contacto",
+    "api"
+  ],
   "author": "Martin Carrizo",
   "license": "MIT"
 }
